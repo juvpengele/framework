@@ -2,12 +2,12 @@
 
 namespace Bow\Mail\Driver;
 
-use Bow\Mail\Send;
+use Bow\Mail\Contracts\MailDriverInterface;
+use Bow\Mail\Message;
 use Bow\Support\Str;
 use InvalidArgumentException;
-use Bow\Mail\Message;
 
-class Native implements Send
+class NativeDriver implements MailDriverInterface
 {
     /**
      * The configuration
@@ -55,11 +55,11 @@ class Native implements Send
             if (!$message->fromIsDefined()) {
                 $form = $this->config['mail'][$section];
 
-                $message->from($form["address"], $form["username"]);
+                $message->from($form["address"], $form["name"]);
             } elseif (!Str::isMail($message->getFrom())) {
                 $form = $this->config['mail'][$message->getFrom()];
 
-                $message->from($form["address"], $form["username"]);
+                $message->from($form["address"], $form["name"]);
             }
         }
 

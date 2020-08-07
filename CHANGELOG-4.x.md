@@ -7,6 +7,32 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+- [fix] session flash error
+- [change] update Application class
+- [change] update default configuration
+- [change] update Event Management system
+- [change] refactoring of Container Manager
+- [change] use Router has base routing management
+
+## [4.2.1] - 2020-05-28
+
+- [fix] Refonte JWT Guard system: Force the policier singkey using the native encrypt key
+- [fix] The magic method "\_\_callStatic()" must have public visibility and be static
+- [add] Add the migration methods for text column type
+
+## [4.1.2, 4.2.0] - 2020-05-23
+
+- [add] Add "service" and "exception" command to console
+- [add] Add docker composer configuration
+- [change] refactoring of mail service and add unity test
+- [change] Update authentication system
+- [change] Update top application structure
+
+## [4.1.1] - 2020-04-11
+
+- [add] add jwt authentication support
+- [fix] remove call static in middleware
+
 ## [4.1.0] - 2019-11-02
 
 - [fix] validation bug fix

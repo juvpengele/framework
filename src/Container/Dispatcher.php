@@ -1,6 +1,6 @@
 <?php
 
-namespace Bow\Application;
+namespace Bow\Container;
 
 use Bow\Http\Request;
 

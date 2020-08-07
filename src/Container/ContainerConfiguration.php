@@ -1,12 +1,12 @@
 <?php
 
-namespace Bow\Configuration\Configurations;
+namespace Bow\Container;
 
-use Bow\Application\Actionner;
+use Bow\Container\Actionner;
 use Bow\Configuration\Configuration;
 use Bow\Configuration\Loader;
 
-class ActionnerConfiguration extends Configuration
+class ContainerConfiguration extends Configuration
 {
     /**
      * @var array

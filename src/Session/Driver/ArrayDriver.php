@@ -7,6 +7,8 @@ class ArrayDriver implements \SessionHandlerInterface
     use DurationTrait;
 
     /**
+     * Define the data store
+     *
      * @var array
      */
     private $sessions;
@@ -29,18 +31,16 @@ class ArrayDriver implements \SessionHandlerInterface
      */
     public function destroy($session_id)
     {
-        @unset($this->sessions[$session_id]);
-
         return true;
     }
 
     /**
      * Garbage collector
      *
-     * @param int $maxlifetime
+     * @param int $max_lifetime
      * @return bool|void
      */
-    public function gc($maxlifetime)
+    public function gc($max_lifetime)
     {
         foreach ($this->sessions as $session_id => $content) {
             if ($this->sessions[$session_id]['time'] <= $this->createTimestamp()) {
@@ -60,6 +60,8 @@ class ArrayDriver implements \SessionHandlerInterface
      */
     public function open($save_path, $session_id)
     {
+        $this->sessions = [];
+
         return true;
     }
 
